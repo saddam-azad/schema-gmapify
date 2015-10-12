@@ -64,7 +64,7 @@
 			map.setTilt(45);
 			
 			// Display multiple places on a map
-			var infoWindow = new google.maps.InfoWindow(), marker, i;
+			var infoWindow = new google.maps.InfoWindow(), marker;
 
 			google.maps.event.addListener(map, "click", function() {
 				infoWindow.close();
@@ -119,7 +119,6 @@
 
 				$(metalist).removeClass("active");
 				$(this).parent().addClass("active");
-				// console.log();
 			});
 
 			
