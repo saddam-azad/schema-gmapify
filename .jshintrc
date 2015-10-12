@@ -12,5 +12,6 @@
 	"node": true,
 	"quotmark": false,
 	"unused": false,
-	"loopfunc": true
+	"loopfunc": true,
+	"immed": false
 }

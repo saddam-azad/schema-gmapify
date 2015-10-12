@@ -73,7 +73,7 @@
 			map.fitBounds(bounds);
 			
 			// Display multiple places on a map
-			var infoWindow = new google.maps.InfoWindow(), marker;
+			var infoWindow = new google.maps.InfoWindow(), marker, clickity;
 
 			google.maps.event.addListener(map, "click", function() {
 				infoWindow.close();
@@ -83,6 +83,7 @@
 			// Loop through our array of markers & place each one on the map 
 			// Define the markers using google.maps.Marker
 			for (i = 0; i < places.length; i++) {
+			// $.each(places, function(i) {
 				var place = places[i];
 				var content = infoWindowContent[i][0];
 				var latitude = parseFloat(place[1]);
@@ -96,11 +97,13 @@
 					content: content
 				});
 
-				//The infoWindow is opened when map marker clicked
-				google.maps.event.addListener(marker, "click", function() {
-					infoWindow.setContent(content);
-					infoWindow.open(map, marker);
+				// Assigns a click function to each marker
+				marker.addListener("click", function() {
+					infoWindow.setContent(this.content);
+					infoWindow.open(map, this);
+					// map.setCenter(this.getPosition());
 				});
+
 			}
 			
 			
@@ -122,6 +125,7 @@
 				google.maps.event.addListener(marker, "click", function() {
 					infoWindow.setContent(content);
 					infoWindow.open(map, marker);
+					// map.setCenter(marker.getPosition());
 				});
 
 				google.maps.event.trigger(marker, "click");
@@ -148,7 +152,7 @@
 
 				google.maps.event.addListener(marker, "click", function() {
 					infoWindow.setContent(content);
-					infoWindow.open(map, marker);
+					infoWindow.open(map, this);
 				});
 
 				google.maps.event.trigger(marker, "click");
