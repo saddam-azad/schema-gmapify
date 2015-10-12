@@ -4,7 +4,6 @@
 	$.gmapify = function(element, options) {
 
 		var defaults = {
-			element: "#map-canvas",
 			meta: "#map-meta",
 			metalist: "li",
 			zoom: 12,
@@ -49,18 +48,21 @@
 			var bounds = new google.maps.LatLngBounds();
 			for (var i = 0; i < places.length; i++) {
 				bounds.extend( new google.maps.LatLng(places[i][1], places[i][2]) );
+				
 			}
 
 			// Create the map
 			var mapOptions = {
-				center: new google.maps.LatLng(bounds.getCenter().G, bounds.getCenter().K),
+				// center: new google.maps.LatLng(bounds.getCenter().G, bounds.getCenter().K),
+				center: bounds.getCenter(),
 				zoom: 12,
 				scrollwheel: false,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 		    };
 
-			var map = new google.maps.Map($(plugin.settings.element)[0], mapOptions);
+			var map = new google.maps.Map($(plugin.settings.canvas)[0], mapOptions);
 			map.setTilt(45);
+			map.fitBounds(bounds);
 			
 			// Display multiple places on a map
 			var infoWindow = new google.maps.InfoWindow(), marker;
@@ -150,7 +152,7 @@
 		    google.maps.event.addDomListener(window, 'resize', function() {
 				map.setCenter(center);
 		    });
-		    */
+		    /**/
 
 		    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
 		    var boundsListener = google.maps.event.addListener((map), "bounds_changed", function(event) {
@@ -162,7 +164,7 @@
 		}; // end plugin.init
 
 		// initialize
-		if ( $(element).length > 0 ) {
+		if ( $(options.canvas).length > 0 ) {			
 			plugin.init();
 		}
 	};
