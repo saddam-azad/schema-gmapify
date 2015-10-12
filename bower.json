@@ -1,0 +1,15 @@
+{
+	"name": "jquery-gmapify",
+	"version": "0.1",
+	"homepage": "http://www.saddamazad.com",
+	"authors": [
+		"Saddam Azad <saddam.azad@me.com>"
+	],
+	"description": "Google Maps integration using Schema.org Place/Organisation/PostalAddress markup.",
+	"main": "src/jquery.gmapify.js",
+	"keywords": [
+		"jquery",
+		"gmaps"
+	],
+	"license": "MIT"
+}
