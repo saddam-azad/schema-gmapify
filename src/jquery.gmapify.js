@@ -115,8 +115,8 @@
 				});
 
 				google.maps.event.addListener(marker, "click", function() {
-					infoWindow.setContent(content);
-					infoWindow.open(map, marker);
+					infoWindow.setContent(this.content);
+					infoWindow.open(map, this);
 					// map.setCenter(marker.getPosition());
 				});
 
