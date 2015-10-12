@@ -7,7 +7,6 @@
  *  Under MIT License
  */
 ;(function ( $, window, document, undefined ) {
-
 	"use strict";
 
 	$.gmapify = function(element, options) {
@@ -171,7 +170,9 @@
 		}; // end plugin.init
 
 		// initialize
-		plugin.init();
+		if ( $(element).length > 0 ) {
+			plugin.init();
+		}
 	};
 
 	// A really lightweight plugin wrapper around the constructor,

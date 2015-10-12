@@ -11,5 +11,9 @@
 		"jquery",
 		"gmaps"
 	],
+	"ignore": [
+		"node_modules",
+		"vendor"
+	],
 	"license": "MIT"
 }
