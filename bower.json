@@ -1,0 +1,31 @@
+{
+  "name": "gmapify",
+  "description": "Integrate Google Maps with multiple markers (and sidebar) with Schema.Org Place/Organisation/PostalAddress data provided in markup.",
+  "version": "0.0.1",
+  "homepage": "http://github.com/azadcreative/gmapify",
+  "authors": [{
+    "name": "Saddam Azad",
+    "email": "saddam.azad@me.com"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azadcreative/gmapify.git"
+  },
+  "license": "Apache 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor"
+  ],
+  "dependencies": {
+    "jquery"                : "1.11.1",
+    "bootstrap"             : "4.0.0-alpha",
+    "font-awesome"          : "~4.2.0",
+    "tocify"                : "gfranko/jquery.tocify.js",
+    "sticky-kit"            : "leafo/sticky-kit"
+  },
+  "devDependencies": {
+
+  }
+}

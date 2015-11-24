@@ -1,0 +1,18 @@
+---
+# The scss file which include files from _sass/
+---
+
+@charset "utf-8";
+
+@import '../vendor/bootstrap/scss/_variables.scss';
+@import '../vendor/bootstrap/scss/_mixins.scss';
+
+// // The default styles
+@import 'docs-default.scss';
+
+// // Responsive styles
+@import 'docs-xs.scss';
+@import 'docs-sm.scss';
+@import 'docs-md.scss';
+// @import 'docs-lg.scss';
+@import 'docs-xl.scss';

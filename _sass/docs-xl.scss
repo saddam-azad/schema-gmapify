@@ -1,0 +1,12 @@
+@media screen and (min-width: map-get($grid-breakpoints, xl)) {
+	/* rules for desktop (992 > 1200) */
+
+	main#content {
+		// background-color: yellow !important;
+
+		.container {
+			// max-width: map-get($container-max-widths, lg);
+			}
+	}
+
+}

@@ -1,0 +1,16 @@
+@media screen and (min-width: map-get($grid-breakpoints, xs) ) {
+	/* rules for everything  */
+
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, xs) ) and (max-width: map-get($grid-breakpoints, sm) ) {
+	/* rules for mobile (0 > 545) */
+
+}
+
+// @media screen and (max-width: 479px) {
+@media screen and (max-width: map-get($grid-breakpoints, sm) ) {
+	/* rules for mobile vertical (< 480)  */
+
+
+}

@@ -1,0 +1,16 @@
+@media screen and (min-width: map-get($grid-breakpoints, sm) ) {
+	/* rules for all resolutions higher than 480 */
+
+
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, sm) ) and (max-width: map-get($grid-breakpoints, md) ) {
+	/* rules for tablet (480 > 720) */
+
+
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, sm) ) {
+	/* rules for all resolutions below 720 (<720) */
+
+}

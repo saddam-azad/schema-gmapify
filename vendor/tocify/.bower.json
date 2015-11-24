@@ -1,0 +1,24 @@
+{
+  "name": "jquery.tocify.js",
+  "version": "1.9.0",
+  "homepage": "http://gregfranko.com/jquery.tocify.js",
+  "authors": [
+    "gfranko <gregfranko5@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "jquery-ui": "~1.10.3"
+  },
+  "description": "A jQuery plugin that dynamically generates a table of contents.",
+  "main": "jquery.tocify.js",
+  "license": "MIT",
+  "_release": "1.9.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.9.0",
+    "commit": "c179865a65c86e9323cdf2b9bfc66f812f077079"
+  },
+  "_source": "git://github.com/gfranko/jquery.tocify.js.git",
+  "_target": "*",
+  "_originalSource": "gfranko/jquery.tocify.js"
+}

@@ -1,0 +1,39 @@
+/*
+ * Old Bootstrap:
+ * min-width: 992px (standard md) applies to lg
+ * min-width: 992px and max-width: 1199px (between 992 and 1199) limited to md
+ * 
+ *
+ * New Bootstrap: 
+ *  $grid-breakpoints / $container-max-widths
+ *	xs >= 0/null
+ *	sm >= 34em/34rem = 545/480
+ *	md >= 48em/45rem = 768/720
+ *	lg >= 62em/60rem = 992/960
+ *	xl >= 75em/72.25rem = 1200/1140
+ *
+ */
+
+// @debug map-get($grid-breakpoints, md);
+// @debug map-get($grid-breakpoints, lg);
+// @debug map-get($container-max-widths, xs);
+
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+	/* rules for desktop (992 > 1200) */
+
+
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, md) ) and (max-width: map-get($grid-breakpoints, lg) ) {
+	/* rules for tablet (720 > 960) */
+
+	main#content {
+		// background-color: cyan !important;
+	}
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md) ) {
+	/* rules for all resolutions below 960 (<960) */
+
+	
+}

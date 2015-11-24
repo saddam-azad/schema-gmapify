@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/vendor/sticky-kit/jquery.sticky-kit.min.js"></script>
+    <script src="/vendor/tocify/src/javascripts/jquery.tocify.min.js"></script>
+
+    <script src="/js/docs.js"></script>
+
+    <script src="/js/jquery.gmapify.js"></script>
+
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link href="/css/gmapify.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/docs.css">
+</head>
+<body>
+
+    <header id="header" role="banner">
+        <nav class="navbar navbar-sa" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div id="navbar-collapse-1" class="">
+                        <ul class="nav navbar-nav">
+                            <li class="{% if page.url == '/' %}active{% endif %}">
+                                <a href="{{ site.baseurl }}/">Docs</a>
+                            </li>
+                            <li class="{% if page.url == '/demo.html' %}active{% endif %}">
+                                <a href="{{ site.baseurl }}/demo.html">Demo</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </nav>
+
+        <div class="header-body">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+                <p>A jQuery plugin for Google Map integration using Schema.org markup (Organisation/Localbusiness/Place)</p>
+
+                <a class="cupid-green" href="https://github.com/azadcreative/gmapify" target="_blank">View on Github <i class="fa fa-github"></i></a>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <main id="content">
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="footer-logo-wrapper">
+                            <a class="logo-image" href="http://saddamazad.com" target="_blank">
+                                <img alt="logo" src="/images/saddamazad.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="scroll-top">
+                <span><i class="fa fa-angle-up"></i></span>
+            </a>
+        </div>
+    </footer>
+
+    {% if site.google_analytics %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+    {% endif %}
+
+</body>
+</html>

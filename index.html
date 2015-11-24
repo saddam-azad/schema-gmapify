@@ -1,1 +1,155 @@
-My Page
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+	    <div class="col-md-4 toc-container">
+		    <div class="list-group" id="toc">
+				
+			</div>
+	    </div>
+
+        <div class="col-md-8">
+			<article class="panel">
+				<header class="panel-header"> 
+					<h2>What is GMapify</h2>
+				</header>
+
+				<section class="panel-content">
+					<p>GMapify is a jQuery plugin for finding Schema markup (Organisation / Localbusiness / Place) and generating a neat Google Map widget.</p>
+
+					<p><strong>What is Schema markup?</strong><p>
+
+					<p>Schema markup is a semantic vocabulary for HTML that provides extra information for search engines. Schema tell search engines what your data means, which changes the way search listings are displayed with rich snippets and meta information extracted from your pages.</p>
+
+					<p>Organisation/Localbusiness/Place Schema markup tells the search engines information about your business, its location, branches, stores, etc.</p>
+
+					<p><strong>What does GMapify do?</strong></p>
+
+					<p>GMapify uses Schema markup to extract information from your webpages and generates a Google Maps widget with multiple markers, titles, descriptions.</p>
+				</section>
+			</article>
+
+			<article class="panel">
+				<header class="panel-header"> 
+					<h2>Markup</h2>
+				</header>
+
+				<section class="panel-content">
+					<p>We start off with a <span class="mark">div</span> with Schema markup <a href="https://schema.org/Organization" target="_blank"><span class="mark">Organization</span></a> with itemscope and itemtype.
+
+{% highlight html %}<div itemscope itemtype="http://schema.org/Organization">
+...
+</div>{% endhighlight %}
+					
+					<p>For each branch or stores of the aforementioned organization, we enlist a <a href="https://schema.org/Place" target="_blank"><span class="mark">Place</span></a>.</p>
+
+					<p>In turn, each place would have two components, a <a href="https://schema.org/PostalAddress" target="_blank"><span class="mark">PostalAddress</span></a> and <a href="https://schema.org/GeoCoordinates" target="_blank"><span class="mark">GeoCoordinates</span></a>.
+
+					<p>The PostalAddress component has a number of parts, such as name, 
+					<a href="https://schema.org/streetAddress" target="_blank">streetAddress</a>, 
+					<a href="https://schema.org/addressLocality" target="_blank">addressLocality</a>, 
+					<a href="https://schema.org/postalCode" target="_blank">postalCode</a>, 
+					<a href="https://schema.org/addressRegion" target="_blank">addressRegion</a>, 
+					<a href="https://schema.org/addressCountry" target="_blank">addressCountry</a>, 
+					<a href="https://schema.org/description" target="_blank">description</a> and 
+					<a href="https://schema.org/openingHours" target="_blank">openingHours</a>. 
+
+					Use whichever is appropriate. Format is provided below:</p>
+
+{% highlight html %}<li itemscope itemtype="http://schema.org/Place">
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+  <span class="name">American Museum of Natural History</span>
+  <span itemprop="streetAddress">Central Park West &amp; 79th St</span>
+  <span itemprop="addressLocality">New York</span>
+  <span itemprop="postalCode">NY 10024</span>
+  <span itemprop="addressRegion">NY</span>
+  <span itemprop="addressCountry">USA</span>
+  <span itemprop="description"></span>
+</div>
+
+<time itemprop="openingHours" datetime="Tu, Wed, Thu">Tue, Wed &amp; Thu</time>
+
+<div itemprop="location" class="location">
+  <div itemprop="geo">
+    <span itemscope itemtype="http://schema.org/GeoCoordinates">
+      <span property="latitude" content="40.781354"></span>
+      <span property="longitude" content="-73.973997"></span>
+    </span>
+  </div>
+</div>
+</li>{% endhighlight %}
+
+				<p>Secondly, as the code above demonstrates, the <span class="mark">GeoCoordinates</span> component has latitude and longitude, which are critically important to include in the code. This is where the plugin gets its coordinates from.</p>
+
+				</section>
+			</article>
+
+			<article class="panel">
+				<header class="panel-header"> 
+					<h2>JavaScript</h2>
+				</header>
+
+				<p>The following are the defaults:</p>
+
+				<section class="panel-content">
+{% highlight javascript %}$('body').gmapify({
+  canvas: "#map-canvas",
+  meta: "#map-meta",
+  metalist: 'li',
+  zoom: 12,
+  scrollwheel: false
+});{% endhighlight %}
+
+					<p>Options are as follows:</p>
+
+					<table>
+				    <thead>
+				        <tr>
+				            <th>Name</th>
+				            <th>Purpose and expected input</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				        <tr>
+				            <td>canvas</td>
+				            <td>The ID where Google Maps would render</td>
+				        </tr>
+				        <tr>
+				            <td>meta</td>
+				            <td>Information source for the map</td>
+				        </tr>
+				        <tr>
+				            <td>metalist</td>
+				            <td>Is it ordered/unordered list item or description list or paragraph?</td>
+				        </tr>
+				        <tr>
+				            <td>zoom</td>
+				            <td>Default zoom level of the map</td>
+				        </tr>
+				        <tr>
+				            <td>scrollwheel</td>
+				            <td>Boolean. Whether map would allow the scrollwheel</td>
+				        </tr>
+				    </tbody>
+				</table>
+				</section>
+			</article>
+
+			<article class="panel">
+				<header class="panel-header"> 
+					<h2>Changelog</h2>
+				</header>
+
+				<section class="panel-content">
+					<ul class="posts">
+			        {% for post in site.posts %}
+				        <li><span>{{ post.date | date: site.date_format }}</span> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+			        {% endfor %}
+				    </ul>
+				</section>
+			</article>
+		</div>
+	</div>
+</div>
