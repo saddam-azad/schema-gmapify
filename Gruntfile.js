@@ -47,6 +47,15 @@ module.exports = function(grunt) {
 			}
 		},
 
+		copy: {
+		  main: {
+		    files: [
+		      {expand: true, cwd: 'css/', src: ['**'], dest: 'gh-pages/css/'},
+		      {expand: true, cwd: 'src/', src: ['**'], dest: 'gh-pages/js/'},
+		    ],
+		  },
+		},
+
 		// watch for changes to source
 		// Better than calling grunt a million times
 		// (call 'grunt watch')
@@ -54,7 +63,7 @@ module.exports = function(grunt) {
 			options: {
 	            spawn: false,
 	        },
-		    files: ['src/*'],
+		    files: ['src/*', 'css/*'],
 		    tasks: ['default']
 		}
 
@@ -64,8 +73,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask("build", ["concat", "uglify"]);
+	grunt.registerTask("build", ["concat", "uglify", "copy"]);
 	grunt.registerTask("default", ["jshint", "build"]);
 	grunt.registerTask("travis", ["default"]);
 
