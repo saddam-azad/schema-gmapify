@@ -1,3 +1,7 @@
 # jQuery GMapify
-##### Integrate Google Maps with multiple markers with Schema.Org data provided in markup.
+##### A jQuery plugin for Google Map integration using Schema.org markup
 
+(Organisation, Localbusiness, PostalAddress and GeoCoordinates)
+
+[Documentation](http://azadcreative.github.io/gmapify/)
+[Demo](http://azadcreative.github.io/gmapify/demo.html)

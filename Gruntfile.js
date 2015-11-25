@@ -50,8 +50,8 @@ module.exports = function(grunt) {
 		copy: {
 		  main: {
 		    files: [
-		      {expand: true, cwd: 'css/', src: ['**'], dest: 'gh-pages/css/'},
-		      {expand: true, cwd: 'src/', src: ['**'], dest: 'gh-pages/js/'},
+		      {expand: true, cwd: 'css/', src: ['**'], dest: '../gh-pages/css/'},
+		      {expand: true, cwd: 'src/', src: ['**'], dest: '../gh-pages/js/'},
 		    ],
 		  },
 		},

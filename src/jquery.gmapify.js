@@ -4,8 +4,8 @@
 	$.gmapify = function(element, options) {
 
 		var defaults = {
-			meta: "#map-meta",
-			metalist: "li",
+			datasource: "#map-meta",
+			dataitems: "li",
 			zoom: 12,
 			scrollwheel: false
 		};
@@ -22,7 +22,7 @@
 		    plugin.settings = $.extend({}, defaults, options);
 
 			// Get the place markup, and define the places and infoWindowContent
-			var metalist = $(this.settings.meta).find(this.settings.metalist);
+			var metalist = $(this.settings.datasource).find(this.settings.dataitems);
 			var places = [];
 			var infoWindowContent = [];
 			
@@ -55,8 +55,8 @@
 			var mapOptions = {
 				// center: new google.maps.LatLng(bounds.getCenter().G, bounds.getCenter().K),
 				center: bounds.getCenter(),
-				zoom: 12,
-				scrollwheel: false,
+				zoom: plugin.settings.zoom,
+				scrollwheel: plugin.settings.scrollwheel,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 		    };
 
@@ -101,6 +101,11 @@
 			
 			// When the places in the sidebar are clicked, highlight marker.
 			$(metalist).find("a").on("click", function() {
+				$(metalist).each(function() {
+					$(this).find("a").removeClass("active");
+				});
+				$(this).addClass("active");
+
 				i = $(this).parent().index();
 				var place = places[i];
 				var content = infoWindowContent[i][0];
@@ -121,9 +126,6 @@
 				});
 
 				google.maps.event.trigger(marker, "click");
-
-				$(metalist).removeClass("active");
-				$(this).parent().addClass("active");
 			});
 
 			
@@ -150,7 +152,7 @@
 				google.maps.event.trigger(marker, "click");
 		    });
 		    
-		    /*
+		    /**
 		    // Center the map when the window is resized
 		    var center = map.getCenter();
 		    google.maps.event.addDomListener(window, 'resize', function() {
@@ -160,7 +162,7 @@
 
 		    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
 		    var boundsListener = google.maps.event.addListener((map), "bounds_changed", function(event) {
-		        this.setZoom(12);
+		        this.setZoom(plugin.settings.zoom);
 		        google.maps.event.removeListener(boundsListener);
 		    });
 		    /**/
