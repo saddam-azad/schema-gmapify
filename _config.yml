@@ -11,7 +11,7 @@ permalink: pretty
 
 # Third-party services
 # just leave someone empty to disable it
-google_analytics:
+google_analytics: UA-70242125-2
 disqus_shortname:
 
 # Outputting
@@ -22,3 +22,9 @@ timezone:      null
 exclude:
   - bower.json
   - node_modules
+
+navigation:
+  - text: Docs
+    url: /
+  - text: Demo
+    url: /demo.html

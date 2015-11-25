@@ -24,19 +24,19 @@
 <body>
 
     <header id="header" role="banner">
-        <nav class="navbar navbar-sa" role="navigation">
+        <nav class="navbar navbar-sa navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
 
                     <div id="navbar-collapse-1" class="">
                         <ul class="nav navbar-nav">
-                            <li class="{% if page.url == '/' %}active{% endif %}">
-                                <a href="{{ site.baseurl }}/">Docs</a>
+                            {% assign url = page.url|remove:'index.html' %}
+                            {% for link in site.navigation %}
+                            <li {% if url == link.url %}class="active"{% endif %}>
+                                <a href="{{ site.baseurl }}{{link.url}}" title="{{link.title}}">{{link.text}}</a>
                             </li>
-                            <li class="{% if page.url == '/demo.html' %}active{% endif %}">
-                                <a href="{{ site.baseurl }}/demo.html">Demo</a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-                <p>A jQuery plugin for Google Map integration using Schema.org markup (Organisation/Localbusiness/Place)</p>
+                <p>A jQuery plugin for Google Map integration using Schema.org markup <br />(Organisation, Localbusiness, PostalAddress and GeoCoordinates)</p>
 
                 <a class="cupid-green" href="https://github.com/azadcreative/gmapify" target="_blank">View on Github <i class="fa fa-github"></i></a>
             </div>

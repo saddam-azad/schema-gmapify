@@ -11,7 +11,9 @@ $(function() {
         hashGenerator: 'pretty'
     });
 
-    $(".toc-container").stick_in_parent();
+    $(".toc-container").stick_in_parent({
+        offset_top: 50
+    });
     
 
 });

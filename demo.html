@@ -7,85 +7,96 @@ layout: default
 
 	<div id="map">
 
-			<div class="col-md-4 localbusiness" id="map-meta" itemscope itemtype="http://schema.org/Organization">
+			<div class="col-md-4" id="map-meta">
+				<!-- 
+				Other accepted itemypes:
+					<div itemscope itemtype="http://schema.org/Corporation"></div>
+					<div itemscope itemtype="http://schema.org/EducationalOrganization"></div>
+					<div itemscope itemtype="http://schema.org/GovernmentOrganization"></div>
+					<div itemscope itemtype="http://schema.org/LocalBusiness"></div>
+					<div itemscope itemtype="http://schema.org/NGO"></div>
+					<div itemscope itemtype="http://schema.org/PerformingGroup"></div>
+					<div itemscope itemtype="http://schema.org/SportsTeam"></div>
+				 -->
+				<div id="organisation-name" itemprop="branchOf" itemscope itemtype="http://schema.org/Organization">
+
+				<a itemprop="url" href="http://example.com/">
+					<div itemprop="name"><strong>Example Co.</strong></div>
+				</a>
+				<img itemprop="logo" src="{{ site.baseurl }}/images/saddamazad.png"/>
+				<div itemprop="description">Example Co. makes awesome widgets.</div>
 
 				<ul class="nav nav-pills nav-stacked" role="tablist">
-					<li class="" itemscope itemtype="http://schema.org/Place">
-						<a href="javascript:;" role="tab" data-toggle="tab">
+					<li itemprop="location" itemscope itemtype="http://schema.org/LocalBusiness" itemref="organisation-name">
+						<a href="javascript:;" role="tab" data-toggle="tab" class="active">
+							<span class="name" itemprop="name">American Museum of Natural History</span>
 							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-							<span class="name">American Museum of Natural History</span>
-							<span itemprop="streetAddress">Central Park West &amp; 79th St</span>
-							<span itemprop="addressLocality">New York</span>
-							<span itemprop="postcode">NY 10024</span>
-							<span itemprop="addressRegion">NY</span>
-							<span itemprop="addressCountry">USA</span>
-							<span itemprop="description">From dinosaurs to outer space and everything in between, this huge museum showcases natural wonders.</span>
+								<span itemprop="streetAddress">Central Park West &amp; 79th St</span>
+								<span itemprop="addressLocality">New York</span>
+								<span itemprop="postalCode">10024</span>
+								<span itemprop="addressRegion">NY</span>
+								<span itemprop="addressCountry">USA</span>
+								<span itemprop="description">From dinosaurs to outer space and everything in between, this huge museum showcases natural wonders.</span>
 							</div>
 
 							<time itemprop="openingHours" datetime="Tu, Wed, Thu">Tue, Wed &amp; Thu</time>
 						</a>
 
-						<div itemprop="location" class="location">
-						    <div itemprop="geo">
-						      <span itemscope itemtype="http://schema.org/GeoCoordinates">
-						        <span property="latitude" content="40.781354"></span>
-						        <span property="longitude" content="-73.973997"></span>
-						      </span>
-						    </div>
+						<div class="location">
+					      <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+					        <span property="latitude" content="40.781354"></span>
+					        <span property="longitude" content="-73.973997"></span>
+					      </span>
 						</div>
 					</li>
 
-					<li itemscope itemtype="http://schema.org/Place">
+					<li itemprop="location" itemscope itemtype="http://schema.org/LocalBusiness" itemref="organisation-name">
 						<a href="javascript:;" role="tab" data-toggle="tab">
+							<span class="name" itemprop="name">Rockefeller Center</span>
 							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-							<span class="name">Rockefeller Center</span>
-							<span itemprop="streetAddress">45 Rockefeller Plaza</span>
-							<span itemprop="addressLocality">New York</span>
-							<span itemprop="postcode">NY 10111</span>
-							<span itemprop="addressRegion">New York</span>
-							<span itemprop="addressCountry">USA</span>
-							<span itemprop="description">Sights abound at this famous complex, home to an ice rink, TV studios &amp; a giant Christmas tree.</span>
-
+								<span itemprop="streetAddress">45 Rockefeller Plaza</span>
+								<span itemprop="addressLocality">New York</span>
+								<span itemprop="postalCode">10111</span>
+								<span itemprop="addressRegion">NY</span>
+								<span itemprop="addressCountry">USA</span>
+								<span itemprop="description">Sights abound at this famous complex, home to an ice rink, TV studios &amp; a giant Christmas tree.</span>
 							</div>
 
 							<time itemprop="openingHours" datetime="We">Wednesdays</time>
 						</a>
 
-						<div itemprop="location" class="location">
-						    <div itemprop="geo">
-						      <span itemscope itemtype="http://schema.org/GeoCoordinates">
-						        <span property="latitude" content="40.758664"></span>
-						        <span property="longitude" content="-73.978613"></span>
-						      </span>
-						    </div>
-						</div>
+					    <div class="location">
+					      <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+					        <span property="latitude" content="40.758664"></span>
+					        <span property="longitude" content="-73.978613"></span>
+					      </span>
+					    </div>
 					</li>
 
-					<li itemscope itemtype="http://schema.org/Place">
+					<li itemprop="location" itemscope itemtype="http://schema.org/LocalBusiness" itemref="organisation-name">
 						<a href="javascript:;" role="tab" data-toggle="tab">
+							<span class="name" itemprop="name">Museum of the City of New York</span>
 							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-							<span class="name">Museum of the City of New York</span>
-							<span itemprop="streetAddress">1220 5th Ave</span>
-							<span itemprop="addressLocality">New York</span>
-							<span itemprop="postcode">NY 10029</span>
-							<span itemprop="addressRegion">New York</span>
-							<span itemprop="addressCountry">USA</span>
-							<span itemprop="description">Photos, maps &amp; other artifacts trace NYC history from its 16th-century birth to the present day. -</span>
+								<span itemprop="streetAddress">1220 5th Ave</span>
+								<span itemprop="addressLocality">New York</span>
+								<span itemprop="postalCode">10029</span>
+								<span itemprop="addressRegion">NY</span>
+								<span itemprop="addressCountry">USA</span>
+								<span itemprop="description">Photos, maps &amp; other artifacts trace NYC history from its 16th-century birth to the present day. -</span>
 							</div>
 
 							<time itemprop="openingHours" datetime="Sat">Sat</time>
 						</a>
 
-						<div itemprop="location" class="location">
-						    <div itemprop="geo">
-						      <span itemscope itemtype="http://schema.org/GeoCoordinates">
-						        <span property="latitude" content="40.792523"></span>
-						        <span property="longitude" content="-73.951877"></span>
-						      </span>
-						    </div>
+						<div class="location">
+					      <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+					        <span property="latitude" content="40.792523"></span>
+					        <span property="longitude" content="-73.951877"></span>
+					      </span>
 						</div>
 					</li>
 				</ul>
+				</div>
 			</div>
 
 			<div>
@@ -99,9 +110,9 @@ layout: default
 	$(function() {
 		$('body').gmapify({
 			canvas: "#map-canvas",
-		    meta: "#map-meta",
-		    metalist: 'li',
-		    zoom: 13
+		    datasource: "#organisation-name",
+		    dataitems: 'li',
+		    zoom: 14
 	    });
 	});
 	</script>
