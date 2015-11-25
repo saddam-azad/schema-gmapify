@@ -4,9 +4,10 @@
 	$.gmapify = function(element, options) {
 
 		var defaults = {
-			datasource: "#map-meta",
+			canvas: "",
+			datasource: "",
 			dataitems: "li",
-			zoom: 12,
+			zoom: 14,
 			scrollwheel: false
 		};
 

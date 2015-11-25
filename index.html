@@ -124,14 +124,14 @@ layout: default
 				<h2>JavaScript</h2>
 			</header>
 
-			<p>The following are the defaults:</p>
+			<p>After DOM has loaded:</p>
 
 			<section class="panel-content">
 {% highlight javascript %}$('body').gmapify({
   canvas: "#map-canvas",
-  meta: "#organisation-name",
-  metalist: 'li',
-  zoom: 12,
+  datasource: "#organisation-name",
+  dataitems: 'li',
+  zoom: 14,
   scrollwheel: false
 });{% endhighlight %}
 
@@ -142,28 +142,34 @@ layout: default
 			        <tr>
 			            <th>Name</th>
 			            <th>Purpose and expected input</th>
+			            <th>Default</th>
 			        </tr>
 			    </thead>
 			    <tbody>
 			        <tr>
 			            <td>canvas</td>
 			            <td>The ID where Google Maps would render</td>
+			            <td>-</td>
 			        </tr>
 			        <tr>
-			            <td>meta</td>
+			            <td>datasource</td>
 			            <td>Information source for the map</td>
+			            <td>-</td>
 			        </tr>
 			        <tr>
-			            <td>metalist</td>
+			            <td>dataitems</td>
 			            <td>Is it ordered/unordered list item or description list or paragraph?</td>
+			            <td>li</td>
 			        </tr>
 			        <tr>
 			            <td>zoom</td>
 			            <td>Default zoom level of the map</td>
+			            <td>14</td>
 			        </tr>
 			        <tr>
 			            <td>scrollwheel</td>
 			            <td>Boolean. Whether map would allow the scrollwheel</td>
+			            <td>false</td>
 			        </tr>
 			    </tbody>
 			</table>
