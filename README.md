@@ -1,7 +1,8 @@
-# jQuery GMapify
+# Schema-GMapify
 ##### A jQuery plugin for Google Map integration using Schema.org markup
 
 (Organisation, Localbusiness, PostalAddress and GeoCoordinates)
 
-[Documentation](http://azadcreative.github.io/gmapify/)
-[Demo](http://azadcreative.github.io/gmapify/demo.html)
+#[Documentation](http://azadcreative.github.io/schema-gmapify/)
+
+#[Demo](http://azadcreative.github.io/schema-gmapify/demo.html)

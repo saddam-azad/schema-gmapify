@@ -85,7 +85,8 @@ html, body {
 #map-meta span[itemprop="addressLocality"], 
 #map-meta span[itemprop="addressRegion"], 
 #map-meta span[itemprop="addressCountry"], 
-#map-meta span[itemprop="description"] {
+#map-meta span[itemprop="description"],
+#map-meta span[itemprop="postalCode"] {
     display: none;
 }
 
