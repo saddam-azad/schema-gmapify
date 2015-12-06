@@ -1,2 +1,3 @@
-[Documentation](http://azadcreative.github.io/gmapify/)
-[Demo](http://azadcreative.github.io/gmapify/demo.html)
+#[Documentation](http://azadcreative.github.io/schema-gmapify/)
+
+#[Demo](http://azadcreative.github.io/schema-gmapify/demo.html)
